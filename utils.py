@@ -457,7 +457,7 @@ async def get_shortlink(chat_id, link):
     # Encode URL into Base64
     DOMAIN = URL
     encoded_url = base64.urlsafe_b64encode(original_url.encode()).decode()
-    short_url = f"{DOMAIN}/{encoded_url}"
+    short_url = f"{DOMAIN}/getfile/{encoded_url}"
     print(f"This is encoded url ==>{short_url}")
     return short_url
 
