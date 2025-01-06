@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LazyBot - Redirecting ❤</title>
+    <script>
+        // Countdown timer logic
+        let countdown = 10; // Countdown in seconds
+        const decodedUrl = "thefileislazydeveloper"; // Dynamically inserted by the backend
+
+        function startCountdown() {
+            const countdownElement = document.getElementById("countdown");
+            const buttonElement = document.getElementById("redirectButton");
+
+            const timer = setInterval(() => {
+                if (countdown > 0) {
+                    countdownElement.textContent = `Redirecting in ${countdown} seconds...`;
+                    countdown--;
+                } else {
+                    clearInterval(timer);
+                    countdownElement.textContent = "Click the button below to proceed!";
+                    buttonElement.style.display = "block"; // Show the button
+                }
+            }, 1000);
+        }
+
+        function redirectToBot() {
+            window.location.href = decodedUrl; // Redirect to the decoded URL
+        }
+    </script>
+    <style>
+        #redirectButton {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #redirectButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body onload="startCountdown()">
+    <h1>Welcome to LazyBot!</h1>
+    <p id="countdown">Preparing your file...</p>
+    <button id="redirectButton" onclick="redirectToBot()">Open File</button>
+</body>
+</html>
