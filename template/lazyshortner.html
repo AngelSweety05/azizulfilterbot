@@ -6,8 +6,8 @@
     <title>LazyBot - Redirecting ❤</title>
     <script>
         // Countdown timer logic
-        let countdown = 10; // Countdown in seconds
-        const decodedUrl = "thefileislazydeveloper"; // Dynamically inserted by the backend
+        let countdown = 15; // Countdown in seconds
+        // const decodedUrl = "thefileislazydeveloper"; // Dynamically inserted by the backend
 
         function startCountdown() {
             const countdownElement = document.getElementById("countdown");
@@ -15,11 +15,11 @@
 
             const timer = setInterval(() => {
                 if (countdown > 0) {
-                    countdownElement.textContent = `Redirecting in ${countdown} seconds...`;
+                    countdownElement.textContent = `Generating link in ${countdown} seconds...`;
                     countdown--;
                 } else {
                     clearInterval(timer);
-                    countdownElement.textContent = "Click the button below to proceed!";
+                    countdownElement.textContent = "Click the button below to get file 👇";
                     buttonElement.style.display = "block"; // Show the button
                 }
             }, 1000);
@@ -30,26 +30,51 @@
         }
     </script>
     <style>
+         body {
+            margin: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa; /* Optional background color */
+        }
         #redirectButton {
             display: none; /* Initially hidden */
-            margin-top: 20px;
+            /* margin-top: 20px; */
             padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007BFF;
-            color: white;
+            /* font-size: 16px; */
+            /* background-color: #007BFF; */
+            /* color: white;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            /* border-radius: 5px; */
+            /* cursor: pointer; */ 
         }
 
-        #redirectButton:hover {
-            background-color: #0056b3;
-        }
+        
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body onload="startCountdown()">
-    <h1>Welcome to LazyBot!</h1>
-    <p id="countdown">Preparing your file...</p>
-    <button id="redirectButton" onclick="redirectToBot()">Open File</button>
+<body onload="startCountdown()" class="flex flex-col  bg-black">
+
+    <div class="w-full h-full flex flex-col justify-center items-center p-5">
+        <h1 class="text-2xl font-bold  mb-4">Welcome to LazyBot!</h1>
+        <p id="countdown" class="text-xl font-semibold mb-4">Preparing your file...</p>
+        <!-- <button id="redirectButton" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 shadow" onclick="redirectToBot()">Get File</button> -->
+        <a id="redirectButton" class="btn btn-wide btn-outline btn-accent text-lg" href="thefileislazydeveloper" >📂 Get File 📂</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="justify-center items-center flex flex-col font-semibold w-full p-2">
+        <p>
+            👑 Owner  <a href="https://telegram.me/commanderak" target="_blank">Support</a> 👑
+        </p>
+        
+        <!-- Since this is free for u ! So Don't remove my credit ❤ -->
+        <p>
+           🧩 Powered by <a href="https://telegram.me/lazydeveloperr" class="font-bold underline" target="_blank">LazyDeveloper</a> ❤
+        </p>
+    </footer>
+
 </body>
 </html>

@@ -69,7 +69,7 @@ async def stream_handler(request: web.Request):
 
 import base64
 
-@routes.get(r"/getfile/{unique_id}", allow_head=True)
+@routes.get(r"getfile/{unique_id}", allow_head=True)
 async def file_handler(request: web.Request):
     """
     Validate the unique_id and serve the page for the shorten video URL.
@@ -92,7 +92,6 @@ async def file_handler(request: web.Request):
     except Exception as e:
         logging.critical(e, exc_info=True)
         raise web.HTTPInternalServerError(text=f"❌ An error occurred: {str(e)}")
-
 
 @routes.get(r"/{path:\S+}", allow_head=True)
 async def stream_handler(request: web.Request):
