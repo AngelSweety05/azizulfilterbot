@@ -69,7 +69,7 @@ async def stream_handler(request: web.Request):
 
 import base64
 
-@routes.get(r"getfile/{unique_id}", allow_head=True)
+@routes.get(r"/getfile/{unique_id}", allow_head=True)
 async def file_handler(request: web.Request):
     """
     Validate the unique_id and serve the page for the shorten video URL.
